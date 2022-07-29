@@ -17,7 +17,7 @@ const wallet = (state = INITIAL_STATE, action) => {
     };
   case 'SUM_EXPENSES':
     return {
-      ...state, totalExpenses: action.payload,
+      ...state, totalExpenses: parseFloat(action.payload),
     };
   case 'CURRENCIES_REQUEST':
     return {
