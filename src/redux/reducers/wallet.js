@@ -6,17 +6,26 @@ const INITIAL_STATE = {
   idToEdit: 0,
   error: '',
   isFetching: false,
+  totalExpenses: 0,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case 'COIN_REQUEST':
+  case 'GET_CURRENCIES':
+    return {
+      ...state, currencies: [...action.payload], isFetching: false,
+    };
+  case 'SUM_EXPENSES':
+    return {
+      ...state, totalExpenses: action.payload,
+    };
+  case 'CURRENCIES_REQUEST':
     return {
       ...state, isFetching: true,
     };
   case 'GET_COIN':
     return {
-      ...state, currencies: [...action.payload], isFetching: false,
+      ...state, expenses: [...state.expenses, ...action.payload], isFetching: false,
     };
   case 'FAILED_REQUEST':
     return {
