@@ -40,7 +40,7 @@ class WalletForm extends Component {
       acc += (parseFloat(curr.value) * parseFloat(curr.exchangeRates[curr.currency].ask));
       return acc;
     }, 0);
-    totalSumExpenses(totalExpenses.toFixed(2));
+    totalSumExpenses(totalExpenses);
   }
 
   handleInputs = ({ target }) => {

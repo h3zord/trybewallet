@@ -5,12 +5,15 @@ const GET_COIN = 'GET_COIN';
 const FAILED_REQUEST = 'FAILED_REQUEST';
 const GET_CURRENCIES = 'GET_CURRENCIES';
 const SUM_EXPENSES = 'SUM_EXPENSES';
+const UPDATE_EXPENSE = 'UPDATE_EXPENSE';
 
 export const loginAction = (payload) => ({ type: LOGIN_SUCESS, payload });
 
 export const getCurrencies = (payload) => ({ type: GET_CURRENCIES, payload });
 
 export const expensesAction = (payload) => ({ type: SUM_EXPENSES, payload });
+
+export const updateExpense = (payload) => ({ type: UPDATE_EXPENSE, payload });
 
 export const currenciesRequest = () => ({ type: CURRENCIES_REQUEST });
 
