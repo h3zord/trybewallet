@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   idToEdit: 0,
   error: '',
   isFetching: false,
-  totalExpenses: 0,
+  totalExpenses: 0.00,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -18,6 +18,10 @@ const wallet = (state = INITIAL_STATE, action) => {
   case 'SUM_EXPENSES':
     return {
       ...state, totalExpenses: parseFloat(action.payload),
+    };
+  case 'UPDATE_EXPENSE':
+    return {
+      ...state, expenses: [...action.payload],
     };
   case 'CURRENCIES_REQUEST':
     return {
