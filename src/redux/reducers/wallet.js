@@ -17,11 +17,19 @@ const wallet = (state = INITIAL_STATE, action) => {
     };
   case 'SUM_EXPENSES':
     return {
-      ...state, totalExpenses: parseFloat(action.payload),
+      ...state, totalExpenses: action.payload,
     };
   case 'UPDATE_EXPENSE':
     return {
       ...state, expenses: [...action.payload],
+    };
+  case 'EDIT_EXPENSE':
+    return {
+      ...state, idToEdit: action.payload, editor: true,
+    };
+  case 'FINISH_EDIT':
+    return {
+      ...state, editor: false,
     };
   case 'CURRENCIES_REQUEST':
     return {

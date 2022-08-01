@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { currenciesRequest,
-  expensesAction, fetchCoin, getCurrencies } from '../redux/actions';
+  expensesAction,
+  fetchCoin, finishEdit, getCurrencies, updateExpense } from '../redux/actions';
 
 class WalletForm extends Component {
   constructor() {
@@ -28,19 +29,19 @@ class WalletForm extends Component {
     fetchCurrencysRequest();
     const promisse = await fetch(URL);
     const data = await promisse.json();
-    const dataFiltered = Object.entries(data)
+    const filteredData = Object.entries(data)
       .filter((coin) => coin[0] !== 'USDT')
       .map((coinName) => coinName[0]);
-    fetchCurrencies(dataFiltered);
+    fetchCurrencies(filteredData);
   }
 
-  sumExpenses = () => {
-    const { dataExpenses, totalSumExpenses } = this.props;
+  sumExpenses = (dataExpenses) => {
+    const { totalSumExpenses } = this.props;
     const totalExpenses = dataExpenses.reduce((acc, curr) => {
       acc += (parseFloat(curr.value) * parseFloat(curr.exchangeRates[curr.currency].ask));
       return acc;
     }, 0);
-    totalSumExpenses(totalExpenses);
+    totalSumExpenses(parseFloat(totalExpenses));
   }
 
   handleInputs = ({ target }) => {
@@ -56,12 +57,44 @@ class WalletForm extends Component {
       getExpenses(this.state);
       this.setState({ value: '', description: '' });
     });
-    setTimeout(() => { this.sumExpenses(); }, 100);
+    setTimeout(() => {
+      const { dataExpenses } = this.props;
+      this.sumExpenses(dataExpenses);
+    }, 100);
+  }
+
+  updateExpense = () => {
+    const { idToEditAction, dataExpenses, updateExpenseAction } = this.props;
+    const { value, description, currency, method, tag } = this.state;
+    dataExpenses[idToEditAction].value = value;
+    dataExpenses[idToEditAction].description = description;
+    dataExpenses[idToEditAction].currency = currency;
+    dataExpenses[idToEditAction].method = method;
+    dataExpenses[idToEditAction].tag = tag;
+    updateExpenseAction(dataExpenses);
+    return dataExpenses;
+  }
+
+  handleInputsEdit = ({ target }) => {
+    const { name, value } = target;
+    this.setState({
+      [name]: value,
+    }, () => {
+      this.updateExpense();
+    });
+  }
+
+  handleClickEdit = () => {
+    const { finishEditAction } = this.props;
+    const dataExpenses = this.updateExpense();
+    this.sumExpenses(dataExpenses);
+    this.setState({ value: '', description: '' });
+    finishEditAction();
   }
 
   render() {
     const { value, description, currency, method, tag } = this.state;
-    const { dataCoin } = this.props;
+    const { dataCoin, switchButton } = this.props;
     return (
       <fieldset>
         <label htmlFor="value-id">
@@ -73,7 +106,7 @@ class WalletForm extends Component {
             min="0"
             name="value"
             value={ value }
-            onChange={ this.handleInputs }
+            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
           />
         </label>
 
@@ -85,7 +118,7 @@ class WalletForm extends Component {
             id="description-id"
             name="description"
             value={ description }
-            onChange={ this.handleInputs }
+            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
           />
         </label>
 
@@ -96,7 +129,7 @@ class WalletForm extends Component {
             id="currency-id"
             name="currency"
             value={ currency }
-            onChange={ this.handleInputs }
+            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
           >
             {
               dataCoin.map((coinName) => (
@@ -118,7 +151,7 @@ class WalletForm extends Component {
             id="method-id"
             name="method"
             value={ method }
-            onChange={ this.handleInputs }
+            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
           >
             <option value="Dinheiro">
               Dinheiro
@@ -139,7 +172,7 @@ class WalletForm extends Component {
             id="tag-id"
             name="tag"
             value={ tag }
-            onChange={ this.handleInputs }
+            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
           >
             <option value="Alimentação">
               Alimentação
@@ -161,9 +194,9 @@ class WalletForm extends Component {
 
         <button
           type="button"
-          onClick={ this.handleClick }
+          onClick={ switchButton ? this.handleClickEdit : this.handleClick }
         >
-          Adicionar despesa
+          { switchButton ? 'Editar despesa' : 'Adicionar despesa'}
         </button>
       </fieldset>
     );
@@ -175,6 +208,10 @@ WalletForm.propTypes = {
   fetchCurrencysRequest: PropTypes.func.isRequired,
   getExpenses: PropTypes.func.isRequired,
   totalSumExpenses: PropTypes.func.isRequired,
+  updateExpenseAction: PropTypes.func.isRequired,
+  finishEditAction: PropTypes.func.isRequired,
+  switchButton: PropTypes.bool.isRequired,
+  idToEditAction: PropTypes.number.isRequired,
   dataCoin: PropTypes.arrayOf(
     PropTypes.string,
   ).isRequired,
@@ -186,6 +223,8 @@ WalletForm.propTypes = {
 const mapStateToProps = (store) => ({
   dataCoin: store.wallet.currencies,
   dataExpenses: store.wallet.expenses,
+  switchButton: store.wallet.editor,
+  idToEditAction: store.wallet.idToEdit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -193,6 +232,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchCurrencysRequest: () => dispatch(currenciesRequest()),
   getExpenses: (payload) => dispatch(fetchCoin(payload)),
   totalSumExpenses: (payload) => dispatch(expensesAction(payload)),
+  updateExpenseAction: (payload) => dispatch(updateExpense(payload)),
+  finishEditAction: () => dispatch(finishEdit()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WalletForm);
