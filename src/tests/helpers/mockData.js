@@ -1,4 +1,4 @@
-const mockData = {
+export const mockData = {
   USD: {
     code: 'USD',
     codein: 'BRL',
@@ -209,4 +209,38 @@ const mockData = {
   },
 };
 
-export default mockData;
+const filteredCurrencies = Object.keys(mockData).filter((key) => key !== 'USDT');
+
+export const initialState = {
+  user: {
+    email: 'teste@teste.com'
+  },
+  wallet: {
+    currencies: filteredCurrencies,
+    expenses: [
+      {
+        id: 1,
+        description: 'Pizza',
+        value: 10,
+        currency: 'USD',
+        method: 'Cartão de débito',
+        tag: 'Lazer',
+        exchangeRates: mockData,
+      },
+      {
+        id: 2,
+        description: 'Beer',
+        value: 5,
+        currency: 'EUR',
+        method: 'Cartão de crédito',
+        tag: 'Lazer',
+        exchangeRates: mockData,
+      }
+    ],
+    editor: false,
+    idToEdit: 0,
+    error: '',
+    isFetching: false,
+    totalExpenses: 73.17,
+  }
+}

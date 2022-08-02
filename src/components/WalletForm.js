@@ -29,9 +29,7 @@ class WalletForm extends Component {
     fetchCurrencysRequest();
     const promisse = await fetch(URL);
     const data = await promisse.json();
-    const filteredData = Object.entries(data)
-      .filter((coin) => coin[0] !== 'USDT')
-      .map((coinName) => coinName[0]);
+    const filteredData = Object.keys(data).filter((key) => key !== 'USDT');
     fetchCurrencies(filteredData);
   }
 
@@ -64,13 +62,13 @@ class WalletForm extends Component {
   }
 
   updateExpense = () => {
-    const { idToEditAction, dataExpenses, updateExpenseAction } = this.props;
+    const { idToEdit, dataExpenses, updateExpenseAction } = this.props;
     const { value, description, currency, method, tag } = this.state;
-    dataExpenses[idToEditAction].value = value;
-    dataExpenses[idToEditAction].description = description;
-    dataExpenses[idToEditAction].currency = currency;
-    dataExpenses[idToEditAction].method = method;
-    dataExpenses[idToEditAction].tag = tag;
+    dataExpenses[idToEdit].value = value;
+    dataExpenses[idToEdit].description = description;
+    dataExpenses[idToEdit].currency = currency;
+    dataExpenses[idToEdit].method = method;
+    dataExpenses[idToEdit].tag = tag;
     updateExpenseAction(dataExpenses);
     return dataExpenses;
   }
@@ -211,20 +209,16 @@ WalletForm.propTypes = {
   updateExpenseAction: PropTypes.func.isRequired,
   finishEditAction: PropTypes.func.isRequired,
   switchButton: PropTypes.bool.isRequired,
-  idToEditAction: PropTypes.number.isRequired,
-  dataCoin: PropTypes.arrayOf(
-    PropTypes.string,
-  ).isRequired,
-  dataExpenses: PropTypes.arrayOf(
-    PropTypes.object,
-  ).isRequired,
+  idToEdit: PropTypes.number.isRequired,
+  dataCoin: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dataExpenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (store) => ({
   dataCoin: store.wallet.currencies,
   dataExpenses: store.wallet.expenses,
   switchButton: store.wallet.editor,
-  idToEditAction: store.wallet.idToEdit,
+  idToEdit: store.wallet.idToEdit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
