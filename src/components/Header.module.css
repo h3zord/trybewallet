@@ -1,0 +1,45 @@
+.container {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  height: 40%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.expense {
+  align-items: center;
+  display: flex;
+  font-family: Epilogue, sans-serif;
+}
+
+.expense p {
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 700;
+  padding-right: 10px;
+}
+
+.expense span {
+  color: var(--blue);
+  font-size: larger;
+}
+
+.expense img {
+  padding-right: 10px;
+}
+
+.email {
+  align-items: center;
+  display: flex;
+}
+
+.email span {
+  color: var(--green);
+  font-family: Epilogue, sans-serif;
+  font-size: medium;
+}
+
+.email img {
+  padding-right: 10px;
+}
