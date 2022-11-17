@@ -147,7 +147,7 @@ input::placeholder {
 
   .formCard {
     align-items: center;
-    background-color: var(--white);
+    background-color: red;
     border-radius: 10px;
     box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
     display: flex;
