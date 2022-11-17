@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/trybewallet/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/trybewallet/static/js/main.ff73b660.chunk.js",
-    "main.js.map": "/trybewallet/static/js/main.ff73b660.chunk.js.map",
+    "main.css": "/trybewallet/static/css/main.e3303b5e.chunk.css",
+    "main.js": "/trybewallet/static/js/main.7be4501b.chunk.js",
+    "main.js.map": "/trybewallet/static/js/main.7be4501b.chunk.js.map",
     "runtime-main.js": "/trybewallet/static/js/runtime-main.ec83dc77.js",
     "runtime-main.js.map": "/trybewallet/static/js/runtime-main.ec83dc77.js.map",
-    "static/js/2.b7511313.chunk.js": "/trybewallet/static/js/2.b7511313.chunk.js",
-    "static/js/2.b7511313.chunk.js.map": "/trybewallet/static/js/2.b7511313.chunk.js.map",
+    "static/js/2.56097d87.chunk.js": "/trybewallet/static/js/2.56097d87.chunk.js",
+    "static/js/2.56097d87.chunk.js.map": "/trybewallet/static/js/2.56097d87.chunk.js.map",
     "index.html": "/trybewallet/index.html",
-    "precache-manifest.88642d047af938bac1b59fbb1356bec9.js": "/trybewallet/precache-manifest.88642d047af938bac1b59fbb1356bec9.js",
+    "precache-manifest.69c904ae9d19c27699d8f1a537ec4338.js": "/trybewallet/precache-manifest.69c904ae9d19c27699d8f1a537ec4338.js",
     "service-worker.js": "/trybewallet/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/trybewallet/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.b7511313.chunk.js.LICENSE.txt": "/trybewallet/static/js/2.b7511313.chunk.js.LICENSE.txt",
-    "static/js/main.ff73b660.chunk.js.LICENSE.txt": "/trybewallet/static/js/main.ff73b660.chunk.js.LICENSE.txt"
+    "static/css/main.e3303b5e.chunk.css.map": "/trybewallet/static/css/main.e3303b5e.chunk.css.map",
+    "static/js/2.56097d87.chunk.js.LICENSE.txt": "/trybewallet/static/js/2.56097d87.chunk.js.LICENSE.txt",
+    "static/js/main.7be4501b.chunk.js.LICENSE.txt": "/trybewallet/static/js/main.7be4501b.chunk.js.LICENSE.txt",
+    "static/media/Vector.svg": "/trybewallet/static/media/Vector.d4142d13.svg",
+    "static/media/Vector1.svg": "/trybewallet/static/media/Vector1.fa2e04a1.svg",
+    "static/media/Login.module.css": "/trybewallet/static/media/fundo.27a8ba37.svg",
+    "static/media/logoTrybeWallet.svg": "/trybewallet/static/media/logoTrybeWallet.a196f217.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ec83dc77.js",
-    "static/js/2.b7511313.chunk.js",
-    "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.ff73b660.chunk.js"
+    "static/js/2.56097d87.chunk.js",
+    "static/css/main.e3303b5e.chunk.css",
+    "static/js/main.7be4501b.chunk.js"
   ]
 }
