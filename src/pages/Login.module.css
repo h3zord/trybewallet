@@ -18,56 +18,331 @@
   display: flex;
   flex-direction: column;
   height: 50%;
+  justify-content: center;
   width: 45%;
-}
-
-.formCard img {
-  padding: 7%;
-  padding-bottom: 60px;
-  width: 60%;
 }
 
 .formCard form {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  justify-content: center;
+  width: 60%;
+}
+
+.formCard img {
+  padding-bottom: 60px;
+  width: 60%;
+}
+
+.email {
+  background: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 7px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline-color: var(--green);
+  padding: 15px;
+}
+
+.pass {
+  background: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 7px;
+  font-size: 16px;
+  margin-bottom: 25px;
+  outline-color: var(--green);
+  padding: 15px;
+}
+
+.buttonEnabled {
+  background-color: var(--blue);
+  border-radius: 7px;
+  color: var(--white);
+  cursor: pointer;
+  font-size: large;
+  padding: 15px;
+}
+
+.buttonDisabled {
+  background-color: rgb(248, 248, 248);
+  border-radius: 7px;
+  color: rgb(151, 151, 151);
+  font-size: large;
+  padding: 15px;
 }
 
 input::placeholder {
   color: var(--blue);
 }
 
-.email {
-  background: var(--white);
-  border: 2px solid var(--blue);
-  border-radius: 5px;
-  font-size: 16px;
-  margin-bottom: 5%;
-  outline-color: var(--green);
-  padding: 3%;
+@media screen and ( min-width : 1280px ) and ( min-height : 720px ) {
+
+  .formCard {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: center;
+    width: 45%;
+  }
+
+  .formCard form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+  }
+
+  .formCard img {
+    padding-bottom: 60px;
+    width: 60%;
+  }
+
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline-color: var(--green);
+    padding: 10px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    outline-color: var(--green);
+    padding: 10px;
+  }
+
+  .buttonEnabled {
+    background-color: var(--blue);
+    border-radius: 7px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: large;
+    padding: 10px;
+  }
+
+  .buttonDisabled {
+    background-color: rgb(248, 248, 248);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+    font-size: large;
+    padding: 10px;
+  }
+
+  input::placeholder {
+    color: var(--blue);
+  }
 }
 
-.pass {
-  background: var(--white);
-  border: 2px solid var(--blue);
-  border-radius: 5px;
-  font-size: 16px;
-  margin-bottom: 8%;
-  outline-color: var(--green);
-  padding: 3%;
+@media screen and ( min-width : 1920px ) and ( min-height : 1080px ) {
+
+  .formCard {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: center;
+    width: 45%;
+  }
+
+  .formCard form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+  }
+
+  .formCard img {
+    padding-bottom: 60px;
+    width: 60%;
+  }
+
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 20px;
+    margin-bottom: 25px;
+    outline-color: var(--green);
+    padding: 15px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 20px;
+    margin-bottom: 50px;
+    outline-color: var(--green);
+    padding: 15px;
+  }
+
+  .buttonEnabled {
+    background-color: var(--blue);
+    border-radius: 7px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .buttonDisabled {
+    background-color: rgb(248, 248, 248);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  input::placeholder {
+    color: var(--blue);
+  }
 }
 
-.buttonEnabled {
-  background-color: var(--blue);
-  color: var(--white);
-  cursor: pointer;
-  font-size: large;
-  padding: 3%;
+@media screen and ( min-width : 2560px ) and ( min-height : 1600px ) {
+
+  .formCard {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: center;
+    width: 45%;
+  }
+
+  .formCard form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+  }
+
+  .formCard img {
+    padding-bottom: 70px;
+    width: 60%;
+  }
+
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 28px;
+    margin-bottom: 30px;
+    outline-color: var(--green);
+    padding: 30px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 28px;
+    margin-bottom: 60px;
+    outline-color: var(--green);
+    padding: 30px;
+  }
+
+  .buttonEnabled {
+    background-color: var(--blue);
+    border-radius: 7px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 28px;
+    padding: 30px;
+  }
+
+  .buttonDisabled {
+    background-color: rgb(248, 248, 248);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+    font-size: 28px;
+    padding: 30px;
+  }
+
+  input::placeholder {
+    color: var(--blue);
+  }
 }
 
-.buttonDisabled {
-  background-color: rgb(248, 248, 248);
-  color: rgb(151, 151, 151);
-  font-size: large;
-  padding: 3%;
+@media screen and ( min-width : 3840px ) and ( min-height : 2160px ) {
+
+  .formCard {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: center;
+    width: 45%;
+  }
+
+  .formCard form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+  }
+
+  .formCard img {
+    padding-bottom: 100px;
+    width: 60%;
+  }
+
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 36px;
+    margin-bottom: 45px;
+    outline-color: var(--green);
+    padding: 32px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 36px;
+    margin-bottom: 90px;
+    outline-color: var(--green);
+    padding: 32px;
+  }
+
+  .buttonEnabled {
+    background-color: var(--blue);
+    border-radius: 7px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 36px;
+    padding: 32px;
+  }
+
+  .buttonDisabled {
+    background-color: rgb(248, 248, 248);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+    font-size: 36px;
+    padding: 32px;
+  }
+
+  input::placeholder {
+    color: var(--blue);
+  }
 }

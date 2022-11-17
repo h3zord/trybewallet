@@ -1,6 +1,5 @@
 .container {
   background-color: #e1e5eb;
-  border: none;
   display: flex;
   flex-direction: column;
   height: 60%;

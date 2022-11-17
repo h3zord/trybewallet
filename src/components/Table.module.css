@@ -1,0 +1,20 @@
+.mainContainer {
+  border: 5px solid blue;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.container {
+  border: 5px solid red;
+  width: 80%;
+}
+
+tr td {
+  color: green;
+}
+
+.teste {
+  color: green;
+  text-align: center;
+}
