@@ -18,19 +18,28 @@
   display: flex;
   flex-direction: column;
   height: 50%;
-  justify-content: center;
+  justify-content: space-around;
   width: 45%;
 }
 
-.formCard form {
+.imgContainer {
+  align-items: center;
   display: flex;
-  flex-direction: column;
+  height: 30%;
   justify-content: center;
   width: 60%;
 }
 
-.formCard img {
-  padding-bottom: 60px;
+.imgContainer img {
+  height: 100%;
+  width: 100%;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  justify-content: space-around;
   width: 60%;
 }
 
@@ -38,8 +47,7 @@
   background: var(--white);
   border: 2px solid var(--blue);
   border-radius: 7px;
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 100%;
   outline-color: var(--green);
   padding: 15px;
 }
@@ -49,9 +57,15 @@
   border: 2px solid var(--blue);
   border-radius: 7px;
   font-size: 16px;
-  margin-bottom: 25px;
   outline-color: var(--green);
   padding: 15px;
+}
+
+.buttonContainer {
+  display: flex;
+  height: 20%;
+  justify-content: center;
+  width: 60%;
 }
 
 .buttonEnabled {
@@ -60,7 +74,8 @@
   color: var(--white);
   cursor: pointer;
   font-size: large;
-  padding: 15px;
+  height: 50%;
+  width: 100%;
 }
 
 .buttonDisabled {
@@ -68,37 +83,178 @@
   border-radius: 7px;
   color: rgb(151, 151, 151);
   font-size: large;
-  padding: 15px;
+  height: 50%;
+  width: 100%;
 }
 
 input::placeholder {
   color: var(--blue);
 }
 
-@media screen and ( min-width : 1280px ) and ( min-height : 720px ) {
+@media ( min-width : 2600px ) {
 
-  .formCard {
-    align-items: center;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
-    display: flex;
-    flex-direction: column;
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 24px;
+    outline-color: var(--green);
+    padding: 20px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 24px;
+    outline-color: var(--green);
+    padding: 20px;
+  }
+
+  .buttonEnabled {
+    background-color: var(--blue);
+    border-radius: 7px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 24px;
     height: 50%;
-    justify-content: center;
-    width: 45%;
+    width: 100%;
   }
 
-  .formCard form {
+  .buttonDisabled {
+    background-color: rgb(248, 248, 248);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+    font-size: 24px;
+    height: 50%;
+    width: 100%;
+  }
+}
+
+@media ( min-width : 3800px ) {
+
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 36px;
+    outline-color: var(--green);
+    padding: 40px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 36px;
+    outline-color: var(--green);
+    padding: 40px;
+  }
+
+  .buttonEnabled {
+    background-color: var(--blue);
+    border-radius: 7px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 36px;
+    height: 50%;
+    width: 100%;
+  }
+
+  .buttonDisabled {
+    background-color: rgb(248, 248, 248);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+    font-size: 36px;
+    height: 50%;
+    width: 100%;
+  }
+}
+
+@media ( max-width : 1400px ) {
+
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 16px;
+    outline-color: var(--green);
+    padding: 15px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 16px;
+    outline-color: var(--green);
+    padding: 15px;
+  }
+
+  .buttonEnabled {
+    background-color: var(--blue);
+    border-radius: 7px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 20px;
+    height: 50%;
+    width: 100%;
+  }
+
+  .buttonDisabled {
+    background-color: rgb(248, 248, 248);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+    font-size: 20px;
+    height: 50%;
+    width: 100%;
+  }
+}
+
+@media ( max-width : 1200px ) {
+
+  .email {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 16px;
+    outline-color: var(--green);
+    padding: 15px;
+  }
+
+  .pass {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 7px;
+    font-size: 16px;
+    outline-color: var(--green);
+    padding: 15px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    height: 25%;
+    justify-content: center;
+    width: 60%;
+  }
+}
+
+@media ( max-width : 992px ) {
+
+  .imgContainer {
+    align-items: center;
+    display: flex;
+    height: 20%;
+    justify-content: center;
+    width: 85%;
+  }
+
+  .inputsContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 60%;
-  }
-
-  .formCard img {
-    padding-bottom: 60px;
-    width: 60%;
+    height: 30%;
+    justify-content: space-around;
+    width: 75%;
   }
 
   .email {
@@ -106,9 +262,8 @@ input::placeholder {
     border: 2px solid var(--blue);
     border-radius: 7px;
     font-size: 16px;
-    margin-bottom: 15px;
     outline-color: var(--green);
-    padding: 10px;
+    padding: 18px;
   }
 
   .pass {
@@ -116,65 +271,33 @@ input::placeholder {
     border: 2px solid var(--blue);
     border-radius: 7px;
     font-size: 16px;
-    margin-bottom: 30px;
     outline-color: var(--green);
-    padding: 10px;
+    padding: 18px;
   }
 
-  .buttonEnabled {
-    background-color: var(--blue);
-    border-radius: 7px;
-    color: var(--white);
-    cursor: pointer;
-    font-size: large;
-    padding: 10px;
-  }
-
-  .buttonDisabled {
-    background-color: rgb(248, 248, 248);
-    border-radius: 7px;
-    color: rgb(151, 151, 151);
-    font-size: large;
-    padding: 10px;
-  }
-
-  input::placeholder {
-    color: var(--blue);
+  .buttonContainer {
+    display: flex;
+    height: 20%;
+    justify-content: center;
+    width: 75%;
   }
 }
 
-@media screen and ( min-width : 1920px ) and ( min-height : 1080px ) {
+@media ( max-width : 768px ) {
 
-  .formCard {
-    align-items: center;
-    background-color: red;
-    border-radius: 10px;
-    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  .inputsContainer {
     display: flex;
     flex-direction: column;
-    height: 50%;
-    justify-content: center;
-    width: 45%;
-  }
-
-  .formCard form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-  }
-
-  .formCard img {
-    padding-bottom: 60px;
-    width: 60%;
+    height: 30%;
+    justify-content: space-around;
+    width: 85%;
   }
 
   .email {
     background: var(--white);
     border: 2px solid var(--blue);
     border-radius: 7px;
-    font-size: 20px;
-    margin-bottom: 25px;
+    font-size: 16px;
     outline-color: var(--green);
     padding: 15px;
   }
@@ -183,166 +306,36 @@ input::placeholder {
     background: var(--white);
     border: 2px solid var(--blue);
     border-radius: 7px;
-    font-size: 20px;
-    margin-bottom: 50px;
+    font-size: 14px;
     outline-color: var(--green);
     padding: 15px;
   }
 
-  .buttonEnabled {
-    background-color: var(--blue);
-    border-radius: 7px;
-    color: var(--white);
-    cursor: pointer;
-    font-size: 20px;
-    padding: 15px;
-  }
-
-  .buttonDisabled {
-    background-color: rgb(248, 248, 248);
-    border-radius: 7px;
-    color: rgb(151, 151, 151);
-    font-size: 20px;
-    padding: 15px;
-  }
-
-  input::placeholder {
-    color: var(--blue);
+  .buttonContainer {
+    display: flex;
+    height: 20%;
+    justify-content: center;
+    width: 85%;
   }
 }
 
-@media screen and ( min-width : 2560px ) and ( min-height : 1600px ) {
-
-  .formCard {
-    align-items: center;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
-    display: flex;
-    flex-direction: column;
-    height: 50%;
-    justify-content: center;
-    width: 45%;
-  }
-
-  .formCard form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-  }
-
-  .formCard img {
-    padding-bottom: 70px;
-    width: 60%;
-  }
+@media ( max-width : 576px ) {
 
   .email {
     background: var(--white);
     border: 2px solid var(--blue);
     border-radius: 7px;
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 16px;
     outline-color: var(--green);
-    padding: 30px;
+    padding: 15px;
   }
 
   .pass {
     background: var(--white);
     border: 2px solid var(--blue);
     border-radius: 7px;
-    font-size: 28px;
-    margin-bottom: 60px;
+    font-size: 10px;
     outline-color: var(--green);
-    padding: 30px;
-  }
-
-  .buttonEnabled {
-    background-color: var(--blue);
-    border-radius: 7px;
-    color: var(--white);
-    cursor: pointer;
-    font-size: 28px;
-    padding: 30px;
-  }
-
-  .buttonDisabled {
-    background-color: rgb(248, 248, 248);
-    border-radius: 7px;
-    color: rgb(151, 151, 151);
-    font-size: 28px;
-    padding: 30px;
-  }
-
-  input::placeholder {
-    color: var(--blue);
-  }
-}
-
-@media screen and ( min-width : 3840px ) and ( min-height : 2160px ) {
-
-  .formCard {
-    align-items: center;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
-    display: flex;
-    flex-direction: column;
-    height: 50%;
-    justify-content: center;
-    width: 45%;
-  }
-
-  .formCard form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-  }
-
-  .formCard img {
-    padding-bottom: 100px;
-    width: 60%;
-  }
-
-  .email {
-    background: var(--white);
-    border: 2px solid var(--blue);
-    border-radius: 7px;
-    font-size: 36px;
-    margin-bottom: 45px;
-    outline-color: var(--green);
-    padding: 32px;
-  }
-
-  .pass {
-    background: var(--white);
-    border: 2px solid var(--blue);
-    border-radius: 7px;
-    font-size: 36px;
-    margin-bottom: 90px;
-    outline-color: var(--green);
-    padding: 32px;
-  }
-
-  .buttonEnabled {
-    background-color: var(--blue);
-    border-radius: 7px;
-    color: var(--white);
-    cursor: pointer;
-    font-size: 36px;
-    padding: 32px;
-  }
-
-  .buttonDisabled {
-    background-color: rgb(248, 248, 248);
-    border-radius: 7px;
-    color: rgb(151, 151, 151);
-    font-size: 36px;
-    padding: 32px;
-  }
-
-  input::placeholder {
-    color: var(--blue);
+    padding: 15px;
   }
 }

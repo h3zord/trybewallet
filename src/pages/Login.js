@@ -43,8 +43,10 @@ class Login extends React.Component {
     return (
       <div className={ styles.container }>
         <div className={ styles.formCard }>
-          <img src={ logoWallet } alt="Logo trybe wallet" />
-          <form className={ styles.inputs }>
+          <div className={ styles.imgContainer }>
+            <img src={ logoWallet } alt="Logo trybe wallet" />
+          </div>
+          <div className={ styles.inputsContainer }>
             <input
               type="email"
               className={ styles.email }
@@ -63,6 +65,8 @@ class Login extends React.Component {
               value={ pass }
               onChange={ this.handleLogin }
             />
+          </div>
+          <div className={ styles.buttonContainer }>
             <button
               type="button"
               className={ isDisabled ? styles.buttonDisabled : styles.buttonEnabled }
@@ -71,7 +75,7 @@ class Login extends React.Component {
             >
               Entrar
             </button>
-          </form>
+          </div>
         </div>
       </div>
     );
