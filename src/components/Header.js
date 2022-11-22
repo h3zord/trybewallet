@@ -11,12 +11,14 @@ class Header extends Component {
     const { getEmail, getExpenses } = this.props;
     return (
       <div className={ styles.container }>
-        <img src={ logoWallet } alt="logo wallet trybe" />
+        <div className={ styles.logo }>
+          <img src={ logoWallet } alt="logo wallet trybe" />
+        </div>
         <div className={ styles.expense }>
           <img src={ coin } alt="logo coin" />
           <p>Despesa Total: </p>
           <span data-testid="total-field">{ getExpenses.toFixed(2) }</span>
-          <span data-testid="header-currency-field"> BRL</span>
+          <span data-testid="header-currency-field">BRL</span>
         </div>
         <div className={ styles.email }>
           <img src={ avatar } alt="avatar" />

@@ -197,7 +197,7 @@ input::placeholder {
     color: var(--white);
     cursor: pointer;
     font-size: 20px;
-    height: 50%;
+    height: 60%;
     width: 100%;
   }
 
@@ -206,7 +206,7 @@ input::placeholder {
     border-radius: 7px;
     color: rgb(151, 151, 151);
     font-size: 20px;
-    height: 50%;
+    height: 60%;
     width: 100%;
   }
 }
@@ -219,7 +219,7 @@ input::placeholder {
     border-radius: 7px;
     font-size: 16px;
     outline-color: var(--green);
-    padding: 15px;
+    padding: 12px;
   }
 
   .pass {
@@ -228,12 +228,12 @@ input::placeholder {
     border-radius: 7px;
     font-size: 16px;
     outline-color: var(--green);
-    padding: 15px;
+    padding: 12px;
   }
 
   .buttonContainer {
     display: flex;
-    height: 25%;
+    height: 20%;
     justify-content: center;
     width: 60%;
   }
@@ -277,7 +277,7 @@ input::placeholder {
 
   .buttonContainer {
     display: flex;
-    height: 20%;
+    height: 15%;
     justify-content: center;
     width: 75%;
   }
@@ -288,7 +288,7 @@ input::placeholder {
   .inputsContainer {
     display: flex;
     flex-direction: column;
-    height: 30%;
+    height: 35%;
     justify-content: space-around;
     width: 85%;
   }
@@ -313,13 +313,25 @@ input::placeholder {
 
   .buttonContainer {
     display: flex;
-    height: 20%;
+    height: 15%;
     justify-content: center;
     width: 85%;
   }
 }
 
 @media ( max-width : 576px ) {
+
+  .formCard {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+    justify-content: space-around;
+    width: 65%;
+  }
 
   .email {
     background: var(--white);
@@ -334,7 +346,7 @@ input::placeholder {
     background: var(--white);
     border: 2px solid var(--blue);
     border-radius: 7px;
-    font-size: 10px;
+    font-size: 15px;
     outline-color: var(--green);
     padding: 15px;
   }

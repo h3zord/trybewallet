@@ -3,17 +3,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { editExpense, expensesAction, updateExpense } from '../redux/actions';
 import styles from './Table.module.css';
+import editImg from '../images/editar.svg';
+import deleteImg from '../images/excluir.svg';
 
 class Table extends Component {
   deleteExpense = ({ target }) => {
     const { className } = target;
     const { dataExpenses, updateExpenseAction, totalSumExpenses } = this.props;
+
     const filteredExpenses = dataExpenses
       .filter((expense) => (expense.id).toString() !== className);
+
     const totalExpenses = filteredExpenses.reduce((acc, curr) => {
       acc += (parseFloat(curr.value) * parseFloat(curr.exchangeRates[curr.currency].ask));
       return acc;
     }, 0);
+
     updateExpenseAction(filteredExpenses);
     totalSumExpenses(parseFloat(totalExpenses));
   }
@@ -69,7 +74,7 @@ class Table extends Component {
                       className={ expense.id }
                       onClick={ this.editExpense }
                     >
-                      Editar
+                      <img src={ editImg } alt="img editar" />
                     </button>
                     <button
                       type="button"
@@ -77,7 +82,7 @@ class Table extends Component {
                       className={ expense.id }
                       onClick={ this.deleteExpense }
                     >
-                      Excluir
+                      <img src={ deleteImg } alt="img deletar" />
                     </button>
                   </td>
                 </tr>

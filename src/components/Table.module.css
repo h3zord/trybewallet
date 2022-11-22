@@ -1,20 +1,29 @@
 .mainContainer {
-  border: 5px solid blue;
+  align-items: flex-start;
+  background-color: var(--blue);
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
   display: flex;
   justify-content: center;
   width: 90%;
 }
 
 .container {
-  border: 5px solid red;
   width: 80%;
 }
 
-tr td {
-  color: green;
+table , th {
+  border: 1px solid var(--white);
+  border-collapse: collapse;
+  color: var(--white);
+  font-family: Epilogue, sans-serif;
+  padding: 10px;
 }
 
-.teste {
-  color: green;
+table , td {
+  color: var(--green);
+  font-family: Epilogue, sans-serif;
+  margin-bottom: 150px;
+  padding: 10px;
   text-align: center;
 }

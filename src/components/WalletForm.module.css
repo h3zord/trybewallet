@@ -1,5 +1,4 @@
 .container {
-  background-color: #e1e5eb;
   display: flex;
   flex-direction: column;
   height: 60%;
@@ -9,6 +8,7 @@
 
 .form {
   align-items: center;
+  background-color: #e1e5eb;
   color: var(--blue);
   display: flex;
   flex-wrap: wrap;
@@ -41,7 +41,6 @@
   border: 2px solid #003be5;
   border-radius: 5px;
   margin-left: 10px;
-  margin-top: 20px;
   outline-color: var(--green);
   padding: 5px;
   width: 12vw;
@@ -51,7 +50,6 @@
   border: 2px solid #003be5;
   border-radius: 5px;
   margin-left: 10px;
-  margin-top: 20px;
   outline-color: var(--green);
   padding: 5px;
   width: 15vw;
@@ -61,7 +59,6 @@
   border: 2px solid #003be5;
   border-radius: 5px;
   margin-left: 10px;
-  margin-top: 20px;
   outline-color: var(--green);
   padding: 5px;
   width: 10vw;
