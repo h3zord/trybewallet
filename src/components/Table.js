@@ -35,7 +35,7 @@ class Table extends Component {
       <div className={ styles.mainContainer }>
         <table className={ styles.container }>
           <thead>
-            <tr className={ styles.teste }>
+            <tr>
               <th scope="col">Descrição</th>
               <th scope="col">Tag</th>
               <th scope="col">Método de pagamento</th>
@@ -74,7 +74,7 @@ class Table extends Component {
                       className={ expense.id }
                       onClick={ this.editExpense }
                     >
-                      <img src={ editImg } alt="img editar" />
+                      <img src={ editImg } alt="img editar" className={ expense.id } />
                     </button>
                     <button
                       type="button"
@@ -82,7 +82,7 @@ class Table extends Component {
                       className={ expense.id }
                       onClick={ this.deleteExpense }
                     >
-                      <img src={ deleteImg } alt="img deletar" />
+                      <img src={ deleteImg } alt="img deletar" className={ expense.id } />
                     </button>
                   </td>
                 </tr>

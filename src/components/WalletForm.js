@@ -70,8 +70,8 @@ class WalletForm extends Component {
   updateExpense = () => {
     const { idToEdit, dataExpenses, updateExpenseAction } = this.props;
     const { value, description, currency, method, tag } = this.state;
-    dataExpenses[idToEdit].value = value;
     dataExpenses[idToEdit].description = description;
+    dataExpenses[idToEdit].value = value;
     dataExpenses[idToEdit].currency = currency;
     dataExpenses[idToEdit].method = method;
     dataExpenses[idToEdit].tag = tag;
@@ -206,6 +206,7 @@ class WalletForm extends Component {
           <button
             type="button"
             onClick={ switchButton ? this.handleClickEdit : this.handleClick }
+            disabled={ !(value.length && description.length) }
           >
             {switchButton ? 'Editar despesa' : 'Adicionar despesa'}
           </button>

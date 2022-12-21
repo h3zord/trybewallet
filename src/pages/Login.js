@@ -46,36 +46,32 @@ class Login extends React.Component {
           <div className={ styles.imgContainer }>
             <img src={ logoWallet } alt="Logo trybe wallet" />
           </div>
-          <div className={ styles.inputsContainer }>
-            <input
-              type="email"
-              className={ styles.email }
-              placeholder="Digite seu email"
-              data-testid="email-input"
-              name="email"
-              value={ email }
-              onChange={ this.handleLogin }
-            />
-            <input
-              type="password"
-              className={ styles.pass }
-              placeholder="Digite sua senha de no mínimo 6 dígitos"
-              data-testid="password-input"
-              name="pass"
-              value={ pass }
-              onChange={ this.handleLogin }
-            />
-          </div>
-          <div className={ styles.buttonContainer }>
-            <button
-              type="button"
-              className={ isDisabled ? styles.buttonDisabled : styles.buttonEnabled }
-              disabled={ isDisabled }
-              onClick={ this.sucessLogin }
-            >
-              Entrar
-            </button>
-          </div>
+          <input
+            type="email"
+            className={ styles.email }
+            placeholder="Digite seu email"
+            data-testid="email-input"
+            name="email"
+            value={ email }
+            onChange={ this.handleLogin }
+          />
+          <input
+            type="password"
+            className={ styles.pass }
+            placeholder="Digite sua senha de 6 dígitos"
+            data-testid="password-input"
+            name="pass"
+            value={ pass }
+            onChange={ this.handleLogin }
+          />
+          <button
+            type="button"
+            className={ isDisabled ? styles.buttonDisabled : styles.buttonEnabled }
+            disabled={ isDisabled }
+            onClick={ this.sucessLogin }
+          >
+            Entrar
+          </button>
         </div>
       </div>
     );

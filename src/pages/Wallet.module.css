@@ -5,8 +5,8 @@
   background-size: 102%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .container2 {
@@ -16,7 +16,6 @@
   box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
   display: flex;
   flex-direction: column;
-  height: 50%;
   justify-content: space-between;
   width: 80%;
 }
