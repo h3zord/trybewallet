@@ -1,0 +1,193 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form {
+  align-items: center;
+  background-color: #e1e5eb;
+  color: var(--blue);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Epilogue, sans-serif;
+  font-weight: 700;
+  gap: 3vh;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.description {
+  border: 2px solid #003be5;
+  border-radius: 5px;
+  margin-left: 10px;
+  outline-color: var(--green);
+  padding: 5px;
+  width: 30vw;
+}
+
+.tag {
+  border: 2px solid #003be5;
+  border-radius: 5px;
+  margin-left: 10px;
+  outline-color: var(--green);
+  padding: 5px;
+  width: 20vw;
+}
+
+.value {
+  border: 2px solid #003be5;
+  border-radius: 5px;
+  margin-left: 10px;
+  outline-color: var(--green);
+  padding: 5px;
+  width: 12vw;
+}
+
+.coin {
+  border: 2px solid #003be5;
+  border-radius: 5px;
+  margin-left: 10px;
+  outline-color: var(--green);
+  padding: 5px;
+  width: 15vw;
+}
+
+.payment {
+  border: 2px solid #003be5;
+  border-radius: 5px;
+  margin-left: 10px;
+  outline-color: var(--green);
+  padding: 5px;
+  width: 10vw;
+}
+
+.button {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+  display: flex;
+  height: 35%;
+  justify-content: center;
+  padding: 30px;
+  width: 100%;
+}
+
+.button button {
+  background-color: var(--green);
+  border: 1px solid #2fc18c;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: Epilogue, sans-serif;
+  padding: 15px;
+  width: 20%;
+}
+
+.button button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+@media screen and ( max-width : 1290px ) {
+
+  .form {
+    align-items: flex-start;
+    background-color: #e1e5eb;
+    color: var(--blue);
+    display: flex;
+    font-family: Epilogue, sans-serif;
+    font-weight: 700;
+    gap: 1.4vh;
+    height: 80%;
+    justify-content: flex-start;
+    padding: 30px;
+  }
+
+  .button {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+    display: flex;
+    height: 20%;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .button button {
+    background-color: var(--green);
+    border: 1px solid #2fc18c;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: Epilogue, sans-serif;
+    padding: 15px;
+    width: 45%;
+  }
+
+  .description {
+    border: 2px solid #003be5;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline-color: var(--green);
+    padding: 5px;
+    width: 60vw;
+  }
+
+  .tag {
+    border: 2px solid #003be5;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline-color: var(--green);
+    padding: 5px;
+    width: 49vw;
+  }
+
+  .value {
+    border: 2px solid #003be5;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline-color: var(--green);
+    padding: 5px;
+    width: 27.2vw;
+  }
+
+  .coin {
+    border: 2px solid #003be5;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline-color: var(--green);
+    padding: 5px;
+    width: 27.2vw;
+  }
+
+  .payment {
+    border: 2px solid #003be5;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline-color: var(--green);
+    padding: 5px;
+    width: 50vw;
+  }
+}
+
+@media screen and ( max-width : 500px ) {
+
+  .form {
+    align-items: center;
+    background-color: #e1e5eb;
+    color: var(--blue);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Epilogue, sans-serif;
+    font-weight: 700;
+    gap: 4vh;
+    justify-content: space-around;
+    padding: 30px;
+  }
+
+}

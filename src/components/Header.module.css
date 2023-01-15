@@ -1,0 +1,145 @@
+.container {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.logo {
+  width: 25%;
+}
+
+.logo img {
+  padding: 30px;
+  width: 100%;
+}
+
+.expense {
+  align-items: center;
+  display: flex;
+  font-family: Epilogue, sans-serif;
+  justify-content: center;
+  padding: 15px;
+  width: 30%;
+}
+
+.expense img {
+  padding-right: 13px;
+  width: 40px;
+}
+
+.expense p {
+  color: var(--blue);
+  font-size: 1vw;
+  font-weight: 700;
+  padding-right: 10px;
+}
+
+.expense span {
+  color: var(--blue);
+  font-size: 1.3vw;
+}
+
+.email {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 25%;
+}
+
+.email img {
+  padding-right: 13px;
+  width: 40px;
+}
+
+.email span {
+  color: var(--green);
+  font-family: Epilogue, sans-serif;
+  font-size: 1vw;
+}
+
+@media screen and ( max-width : 1290px ) {
+
+  .container {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .logo {
+    width: 45%;
+  }
+
+  .expense {
+    align-items: center;
+    display: flex;
+    font-family: Epilogue, sans-serif;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .email {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+  }
+
+  .expense p {
+    color: var(--blue);
+    font-size: 1.5vw;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+
+  .expense span {
+    color: var(--blue);
+    font-size: 1.8vw;
+  }
+
+  .email span {
+    color: var(--green);
+    font-family: Epilogue, sans-serif;
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and ( max-width : 700px ) {
+
+  .logo {
+    width: 80%;
+  }
+
+  .expense {
+    align-items: center;
+    display: flex;
+    font-family: Epilogue, sans-serif;
+    justify-content: center;
+    padding: 15px;
+    width: 70%;
+  }
+
+  .expense p {
+    color: var(--blue);
+    font-size: 2.1vmin;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+
+  .expense span {
+    color: var(--blue);
+    font-size: 2.4vmin;
+  }
+
+  .email span {
+    color: var(--green);
+    font-family: Epilogue, sans-serif;
+    font-size: 2.1vmin;
+  }
+}

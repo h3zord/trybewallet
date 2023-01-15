@@ -1,0 +1,59 @@
+.mainContainer {
+  align-items: flex-start;
+  background-color: var(--blue);
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.container {
+  width: 80%;
+}
+
+table , th {
+  border: 1px solid var(--white);
+  border-collapse: collapse;
+  color: var(--white);
+  font-family: Epilogue, sans-serif;
+  padding: 10px;
+}
+
+table , td {
+  color: var(--green);
+  font-family: Epilogue, sans-serif;
+  margin-bottom: 150px;
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and ( max-width : 1290px ) {
+
+  .mainContainer {
+    align-items: flex-start;
+    background-color: var(--blue);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+    width: 90%;
+  }
+
+}
+
+@media screen and ( max-width : 1095px ) {
+
+  .mainContainer {
+    align-items: flex-start;
+    background-color: var(--blue);
+    border-radius: 10px;
+    box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    width: 90%;
+  }
+}
+

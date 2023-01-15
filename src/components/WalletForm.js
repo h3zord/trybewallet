@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { currenciesRequest,
+import styles from './WalletForm.module.css';
+import {
+  currenciesRequest,
   expensesAction,
-  fetchCoin, finishEdit, getCurrencies, updateExpense } from '../redux/actions';
+  fetchCoin,
+  finishEdit,
+  getCurrencies,
+  updateExpense,
+} from '../redux/actions';
 
 class WalletForm extends Component {
   constructor() {
@@ -64,8 +70,8 @@ class WalletForm extends Component {
   updateExpense = () => {
     const { idToEdit, dataExpenses, updateExpenseAction } = this.props;
     const { value, description, currency, method, tag } = this.state;
-    dataExpenses[idToEdit].value = value;
     dataExpenses[idToEdit].description = description;
+    dataExpenses[idToEdit].value = value;
     dataExpenses[idToEdit].currency = currency;
     dataExpenses[idToEdit].method = method;
     dataExpenses[idToEdit].tag = tag;
@@ -94,109 +100,118 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     const { dataCoin, switchButton } = this.props;
     return (
-      <fieldset>
-        <label htmlFor="value-id">
-          Valor:
-          <input
-            type="number"
-            data-testid="value-input"
-            id="value-id"
-            min="0"
-            name="value"
-            value={ value }
-            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
-          />
-        </label>
+      <div className={ styles.container }>
+        <div className={ styles.form }>
+          <label htmlFor="description-id">
+            Descrição:
+            <input
+              type="text"
+              className={ styles.description }
+              data-testid="description-input"
+              id="description-id"
+              name="description"
+              value={ description }
+              onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
+            />
+          </label>
 
-        <label htmlFor="description-id">
-          Descrição:
-          <input
-            type="text"
-            data-testid="description-input"
-            id="description-id"
-            name="description"
-            value={ description }
-            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
-          />
-        </label>
+          <label htmlFor="tag-id">
+            Categoria da despesa:
+            <select
+              data-testid="tag-input"
+              className={ styles.tag }
+              id="tag-id"
+              name="tag"
+              value={ tag }
+              onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
+            >
+              <option value="Alimentação">
+                Alimentação
+              </option>
+              <option value="Lazer">
+                Lazer
+              </option>
+              <option value="Trabalho">
+                Trabalho
+              </option>
+              <option value="Transporte">
+                Transporte
+              </option>
+              <option value="Saúde">
+                Saúde
+              </option>
+            </select>
+          </label>
 
-        <label htmlFor="currency-id">
-          Moeda:
-          <select
-            data-testid="currency-input"
-            id="currency-id"
-            name="currency"
-            value={ currency }
-            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
+          <label htmlFor="value-id">
+            Valor:
+            <input
+              type="number"
+              className={ styles.value }
+              data-testid="value-input"
+              id="value-id"
+              min="0"
+              name="value"
+              value={ value }
+              onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
+            />
+          </label>
+
+          <label htmlFor="currency-id">
+            Moeda:
+            <select
+              data-testid="currency-input"
+              className={ styles.coin }
+              id="currency-id"
+              name="currency"
+              value={ currency }
+              onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
+            >
+              {
+                dataCoin.map((coinName) => (
+                  <option
+                    key={ coinName }
+                    value={ coinName }
+                  >
+                    {`${coinName}`}
+                  </option>
+                ))
+              }
+            </select>
+
+          </label>
+          <label htmlFor="method-id">
+            Forma de pagamento:
+            <select
+              data-testid="method-input"
+              className={ styles.payment }
+              id="method-id"
+              name="method"
+              value={ method }
+              onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
+            >
+              <option value="Dinheiro">
+                Dinheiro
+              </option>
+              <option value="Cartão de crédito">
+                Cartão de crédito
+              </option>
+              <option value="Cartão de débito">
+                Cartão de débito
+              </option>
+            </select>
+          </label>
+        </div>
+        <div className={ styles.button }>
+          <button
+            type="button"
+            onClick={ switchButton ? this.handleClickEdit : this.handleClick }
+            disabled={ !(value.length && description.length) }
           >
-            {
-              dataCoin.map((coinName) => (
-                <option
-                  key={ coinName }
-                  value={ coinName }
-                >
-                  {`${coinName}`}
-                </option>
-              ))
-            }
-          </select>
-
-        </label>
-        <label htmlFor="method-id">
-          Forma de pagamento:
-          <select
-            data-testid="method-input"
-            id="method-id"
-            name="method"
-            value={ method }
-            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
-          >
-            <option value="Dinheiro">
-              Dinheiro
-            </option>
-            <option value="Cartão de crédito">
-              Cartão de crédito
-            </option>
-            <option value="Cartão de débito">
-              Cartão de débito
-            </option>
-          </select>
-        </label>
-
-        <label htmlFor="tag-id">
-          Tag:
-          <select
-            data-testid="tag-input"
-            id="tag-id"
-            name="tag"
-            value={ tag }
-            onChange={ switchButton ? this.handleInputsEdit : this.handleInputs }
-          >
-            <option value="Alimentação">
-              Alimentação
-            </option>
-            <option value="Lazer">
-              Lazer
-            </option>
-            <option value="Trabalho">
-              Trabalho
-            </option>
-            <option value="Transporte">
-              Transporte
-            </option>
-            <option value="Saúde">
-              Saúde
-            </option>
-          </select>
-        </label>
-
-        <button
-          type="button"
-          onClick={ switchButton ? this.handleClickEdit : this.handleClick }
-        >
-          { switchButton ? 'Editar despesa' : 'Adicionar despesa'}
-        </button>
-      </fieldset>
+            {switchButton ? 'Editar despesa' : 'Adicionar despesa'}
+          </button>
+        </div>
+      </div>
     );
   }
 }
