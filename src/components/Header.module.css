@@ -66,7 +66,6 @@
     align-items: center;
     background-color: var(--white);
     display: flex;
-    flex-direction: column;
     height: 40%;
     justify-content: space-around;
     width: 100%;
