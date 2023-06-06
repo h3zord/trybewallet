@@ -27,11 +27,11 @@ https://user-images.githubusercontent.com/102384026/226149051-2e4e46d2-c3a9-4eb0
 
 <strong>TrybeWallet</strong> é uma aplicação de gerenciamento de despesas, que permite ao usuário adicionar, editar e remover registros de gastos. Com ele, é possível visualizar uma tabela de todas as despesas e o total destas em uma moeda escolhida pelo usuário, com cotações atualizadas em tempo real por meio de uma API.
 
-O projeto foi desenvolvido com React e Redux para controlar o estado global da aplicação, além de ter sua estilização feita com CSS. O versionamento de código foi feito usando Git.
+O projeto foi desenvolvido com react e redux para controlar o estado global da aplicação, além de ter sua estilização feita com CSS. O versionamento de código foi feito usando git.
 
 Após realizar o login na aplicação, o usuário pode adicionar uma nova despesa preenchendo a descrição, categoria, valor, forma de pagamento e moeda de pagamento. As despesas podem ser visualizadas em uma tabela, incluindo o valor convertido para reais usando a cotação em tempo real. O usuário tem a opção de editar ou excluir uma despesa a qualquer momento. No cabeçalho da tela principal, é possível ver o email do usuário e o total de gastos convertidos para reais.
 
-## Linguagens e ferramentas:
+## Linguagens e ferramentas
 - HTML
 - CSS
 - Javascript
@@ -69,6 +69,6 @@ Caso utilize o yarn
 ```
 yarn start
 ```
-<strong>O React irá executar a aplicação na porta padrão 3000.</strong>
+<strong>O react irá executar a aplicação na porta padrão 3000.</strong>
 <br/>
 ➜ http://localhost:3000/
